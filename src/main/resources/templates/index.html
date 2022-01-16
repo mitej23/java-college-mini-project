@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Income Tax Calculator</title>
+</head>
+<body>
+	<h2>Calculate Your Income Tax</h2>
+	
+	
+	<form th:action="@{calculate}" th:object="${user}" method="post">
+	
+		<label>Your Name</label>
+		<input type="text" name="username" />
+		
+		<label>Your Salary</label>
+		<input type="number" name="salary" />
+		
+		
+  		<br><br>
+  		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
