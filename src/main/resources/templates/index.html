@@ -7,17 +7,8 @@
 	<h2>Calculate Your Income Tax</h2>
 	
 	
-	<form th:action="@{calculate}" th:object="${user}" method="post">
-	
-		<label>Your Name</label>
-		<input type="text" name="username" />
-		
-		<label>Your Salary</label>
-		<input type="number" name="salary" />
-		
-		
-  		<br><br>
-  		<input type="submit" value="Submit">
-	</form>
+	<h2>Are you an salaried person or a business man</h2>
+	<a href="/salaried-person">Salaried</a>
+	<a href="/business-person">Business Man</a> 
 </body>
 </html>

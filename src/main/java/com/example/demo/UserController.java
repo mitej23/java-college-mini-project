@@ -10,25 +10,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
 	
-	@GetMapping("/index")
-	public String GetForm(Model model) {
-		model.addAttribute("User" , new User());
-		return "index";
+	@GetMapping("/salaried-person")
+	public String GetSalariedPersonForm(Model model) {
+		model.addAttribute("User" , new SalariedUser());
+		return "salaried";
 	}
 	
-	@PostMapping("/calculate")
-	public String PostForm(@ModelAttribute User user, BindingResult result,Model model) {
+	@GetMapping("/business-person")
+	public String GetBusinessPersonForm(Model model) {
+		model.addAttribute("User" , new User());
+		return "business";
+	}
+	
+	@PostMapping("/salaried-tax")
+	public String PostSalariedUserForm(@ModelAttribute SalariedUser user, BindingResult result,Model model) {
 		
 		
 		model.addAttribute("User" , user);
-		if(Integer.parseInt(user.getSalary()) > 10000) {
-			model.addAttribute("tax" , 100);
-		}else {
-			model.addAttribute("tax" , 10);
-		}
-		
+		model.addAttribute("tax",user.tax());
 		
 		return "tax";
 	}
+	
+	
 	
 }

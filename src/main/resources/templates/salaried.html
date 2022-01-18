@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Income Tax Calculator</title>
+</head>
+<body>
+	<h2>Calculate Your Income Tax</h2>
+	
+	
+	<form th:action="@{salaried-tax}" th:object="${user}" method="post">
+	
+		<label>Your Name</label>
+		<input type="text" name="username" />
+		<br>
+		
+		<label>Your Basic</label>
+		<input type="number" name="basic" />
+		<br>
+		
+		<label>Your Dearance Allowance</label>
+		<input type="number" name="da" />
+		<br>
+		
+		<label>Your LTA</label>
+		<input type="number" name="lta" />
+		<br>
+		
+		<input type="checkbox" name="livingInMetro" value="2">
+                    Living In metro?<br> 
+		
+		<label>Your HRA</label>
+		<input type="number" name="hra" />
+		<br>
+		
+		<label>Your Total Rent Paid</label>
+		<input type="number" name="totalRentPaid" />
+		<br>
+		
+		<label>Your Income From Other Sources</label>
+		<input type="number" name="incomeEarnedFromOtherSources" />
+		<br>
+		
+		<label>Your Investment under Section 80c  </label>
+		<label>(ppf, elss, epf, sukanya (SSY), premium paid for term insurance ,
+		repayment towards principal of home loan)</label>
+		<input type="number" name="invUnder80c" />
+		<br>
+		
+		<label>Your Investment in NPS</label>
+		<input type="number" name="npsInv" />
+		<br>
+		
+		<label>Saving Account interest</label>
+		<input type="number" name="savingsAccInterest" />
+		<br>
+		
+		<label>Interst on Education Loan</label>
+		<input type="number" name="intOnEduLoan" />
+		<br>
+		
+		<label>Interst on Home Loan</label>
+		<input type="number" name="intToHomeLoan" />
+		<br>
+		
+		<label>Medical Insurance Premiums </label>
+		<input type="number" name="medicalInsurancePremiumBills" />
+		<br>
+		
+		<label>Donations under 80g</label>
+		<input type="number" name="donationUnder80G" />
+		<br>
+		
+  		<br>
+  		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
