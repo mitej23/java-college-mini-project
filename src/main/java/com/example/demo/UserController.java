@@ -18,13 +18,21 @@ public class UserController {
 	
 	@GetMapping("/business-person")
 	public String GetBusinessPersonForm(Model model) {
-		model.addAttribute("User" , new User());
+		model.addAttribute("User" , new BusinessUser());
 		return "business";
 	}
 	
 	@PostMapping("/salaried-tax")
 	public String PostSalariedUserForm(@ModelAttribute SalariedUser user, BindingResult result,Model model) {
 		
+		model.addAttribute("User" , user);
+		model.addAttribute("tax",user.tax());
+		
+		return "tax";
+	}
+	
+	@PostMapping("/business-tax")
+	public String PostBusinessUserForm(@ModelAttribute BusinessUser user, BindingResult result,Model model) {
 		
 		model.addAttribute("User" , user);
 		model.addAttribute("tax",user.tax());

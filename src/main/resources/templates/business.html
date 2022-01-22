@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Income Tax Calculator</title>
+</head>
+<body>
+	<h2>Calculate Your Income Tax</h2>
+	
+	
+	<form th:action="@{business-tax}" th:object="${user}" method="post">
+	
+		<label>Your Revenue</label>
+		<input type="text" name="revenue" />
+		<br>
+		
+		<label>Your Expenses for this year</label>
+		<label>This does not include expense on assets or things that are going to be used for more than one year.</label>
+		<input type="number" name="expenses" />
+		<br>
+		
+		<label>Your Expense on Machinery / Plant</label>
+		<input type="number" name="machineryOrPlant" />
+		<br>
+		
+		<label>Your Expense on Building</label>
+		<input type="number" name="buildings" />
+		<br>
+		
+		<label>Your Expense on Furniture or Fixtures</label>
+		<input type="number" name="furnitureOrFixtures" />
+		<br>
+		
+		<label>Your Expense on Vehicles</label>
+		<input type="number" name="vehicles" />
+		<br>
+		
+		<label>Your Expense on Intangible assets</label>
+		<input type="number" name="intangibles" />
+		<br>
+		
+  		<br>
+  		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
